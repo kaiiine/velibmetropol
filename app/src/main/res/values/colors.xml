@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fond sombre profond -->
+    <color name="background_dark">#0B1220</color>
+    <color name="background_dark_2">#13203A</color>
+    <color name="surface_dark">#16223B</color>
+
+    <!-- Verre (glassmorphisme) -->
+    <color name="glass_fill">#1AFFFFFF</color>
+    <color name="glass_fill_strong">#2EFFFFFF</color>
+    <color name="glass_stroke">#33FFFFFF</color>
+    <color name="glass_scrim">#990B1220</color>
+
+    <!-- Accents Vélib -->
+    <color name="velib_green">#4ADE80</color>
+    <color name="velib_green_dark">#16A34A</color>
+    <color name="ebike_blue">#38BDF8</color>
+    <color name="dock_purple">#A78BFA</color>
+    <color name="warning_amber">#FBBF24</color>
+    <color name="danger_red">#F87171</color>
+
+    <!-- Texte -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#B6C2D9</color>
+    <color name="text_tertiary">#7C8AA5</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>

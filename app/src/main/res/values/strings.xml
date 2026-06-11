@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vélib Métropole</string>
+
+    <!-- Carte -->
+    <string name="search_hint">Rechercher une station…</string>
+    <string name="my_location">Ma position</string>
+    <string name="refresh">Actualiser</string>
+    <string name="favorites">Favoris</string>
+    <string name="nearby">À proximité</string>
+    <string name="settings">Paramètres</string>
+    <string name="loading_stations">Chargement des stations…</string>
+    <string name="error_network">Pas de connexion — données indisponibles</string>
+    <string name="zoom_hint">Zoomez pour voir les stations</string>
+
+    <!-- Détail -->
+    <string name="station_detail">Détail de la station</string>
+    <string name="mechanical_bikes">Vélos mécaniques</string>
+    <string name="electric_bikes">Vélos électriques</string>
+    <string name="free_docks">Places libres</string>
+    <string name="capacity">Capacité totale</string>
+    <string name="go_there">Y aller</string>
+    <string name="share">Partager</string>
+    <string name="see_on_map">Voir sur la carte</string>
+    <string name="add_favorite">Ajouter aux favoris</string>
+    <string name="remove_favorite">Retirer des favoris</string>
+    <string name="offline_banner">Mode hors connexion — données du %1$s</string>
+    <string name="station_open">Station en service</string>
+    <string name="station_closed">Station fermée</string>
+    <string name="last_update">Mis à jour : %1$s</string>
+
+    <!-- Favoris -->
+    <string name="no_favorites">Aucune station favorite.\nAppuyez sur le cœur d\'une station pour l\'ajouter ici.</string>
+    <string name="favorites_title">Mes favoris</string>
+
+    <!-- Proximité -->
+    <string name="nearby_title">Stations à proximité</string>
+    <string name="no_nearby">Aucune station dans un rayon de %1$d m.\nAugmentez le périmètre dans les paramètres.</string>
+    <string name="location_needed">La localisation est nécessaire pour trouver les stations proches</string>
+    <string name="distance_format">%1$d m</string>
+    <string name="distance_km_format">%1$.1f km</string>
+
+    <!-- Paramètres -->
+    <string name="settings_title">Paramètres</string>
+    <string name="radius_label">Périmètre de recherche</string>
+    <string name="radius_description">Rayon utilisé pour trouver les stations proches de vous</string>
+    <string name="radius_value">%1$d m</string>
+    <string name="auto_refresh_label">Actualisation automatique</string>
+    <string name="auto_refresh_description">Actualise les disponibilités toutes les 60 secondes</string>
+
+    <!-- Divers -->
+    <string name="bikes_short">vélos</string>
+    <string name="docks_short">places</string>
+    <string name="details">Détails</string>
+    <string name="back">Retour</string>
+</resources>
