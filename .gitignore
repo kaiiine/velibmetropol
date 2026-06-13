@@ -1,17 +1,33 @@
+# Built outputs
 *.iml
 .gradle
-/local.properties
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Android Studio / IntelliJ
+.idea/
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+
+# Local config (SDK path, NDK path — machine-specific)
 local.properties
-.idea/
+/local.properties
+
+# Signing keys — ne jamais versionner
+*.jks
+*.keystore
+keystore.properties
+release/
+
+# macOS
+.DS_Store
+
+# Fichiers perso hors scope
 DOCUMENTATION_UTILISATEUR.md
