@@ -157,10 +157,32 @@ class NearbyActivity : AppCompatActivity() {
 
         adapter.submit(rows)
         if (rows.isEmpty()) {
-            binding.emptyView.text = getString(R.string.no_nearby, radiusMeters)
+            binding.emptyView.text = buildEmptyMessage(location)
             binding.emptyView.visibility = View.VISIBLE
         } else {
             binding.emptyView.visibility = View.GONE
+        }
+    }
+
+    /**
+     * Message d'aide : si l'utilisateur est très loin de toute station
+     * (typiquement un émulateur localisé hors de Paris), on le lui dit
+     * plutôt que d'afficher une liste vide inexpliquée.
+     */
+    private fun buildEmptyMessage(location: Location): String {
+        val nearestMeters = StationRepository.stations.minOfOrNull { station ->
+            GeoUtils.distanceMeters(
+                location.latitude, location.longitude, station.lat, station.lon
+            )
+        } ?: return getString(R.string.error_network)
+
+        return if (nearestMeters > 20_000) {
+            "Vous êtes à ${GeoUtils.formatDistance(nearestMeters)} de la station " +
+                    "Vélib la plus proche.\n\nSur un émulateur, définissez une position " +
+                    "à Paris dans Extended Controls → Location."
+        } else {
+            getString(R.string.no_nearby, radiusMeters) +
+                    "\nStation la plus proche : ${GeoUtils.formatDistance(nearestMeters)}"
         }
     }
 }

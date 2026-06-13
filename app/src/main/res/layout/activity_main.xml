@@ -21,7 +21,7 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/bg_glass_pill"
         android:elevation="8dp"
-        app:blurOverlayColor="@color/glass_fill"
+        app:blurOverlayColor="@color/glass_scrim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -52,7 +52,7 @@
                 android:maxLines="1"
                 android:paddingHorizontal="12dp"
                 android:textColor="@color/text_primary"
-                android:textColorHint="@color/text_tertiary"
+                android:textColorHint="@color/text_secondary"
                 android:textSize="15sp" />
 
             <ImageButton
@@ -98,7 +98,7 @@
         android:background="@drawable/bg_glass_pill"
         android:elevation="6dp"
         android:visibility="gone"
-        app:blurOverlayColor="@color/glass_fill"
+        app:blurOverlayColor="@color/glass_scrim"
         app:layout_constraintBottom_toTopOf="@id/bottom_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,8 +110,9 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="16dp"
             android:paddingVertical="8dp"
-            android:textColor="@color/text_secondary"
+            android:textColor="@color/text_primary"
             android:textSize="12sp"
+            android:textStyle="bold"
             tools:text="1 472 stations · 18 230 vélos disponibles" />
     </eightbitlab.com.blurview.BlurView>
 

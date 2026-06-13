@@ -138,8 +138,16 @@ class MainActivity : AppCompatActivity() {
         controller.setZoom(14.0)
         controller.setCenter(GeoPoint(48.8566, 2.3522)) // Paris
 
+        // Tuiles agrandies selon la densité d'écran : noms de rues lisibles
+        isTilesScaledToDpi = true
+
         // Tuiles assombries pour coller au thème sombre
         overlayManager.tilesOverlay.setColorFilter(buildDarkTileFilter())
+        // Pas de grille blanche pendant le chargement des tuiles
+        overlayManager.tilesOverlay.loadingBackgroundColor =
+            ContextCompat.getColor(this@MainActivity, R.color.background_dark)
+        overlayManager.tilesOverlay.loadingLineColor =
+            ContextCompat.getColor(this@MainActivity, R.color.surface_dark)
 
         addMapListener(DelayedMapListener(object : MapListener {
             override fun onScroll(event: ScrollEvent?): Boolean {
@@ -186,7 +194,7 @@ class MainActivity : AppCompatActivity() {
             val bbox = map.boundingBox.increaseByScale(1.2f)
             stations.asSequence()
                 .filter { bbox.contains(it.lat, it.lon) }
-                .take(400)
+                .take(250)
                 .forEach { station ->
                     val marker = Marker(map).apply {
                         position = GeoPoint(station.lat, station.lon)
@@ -209,7 +217,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadStations(showSpinner: Boolean) {
         lifecycleScope.launch {
-            if (showSpinner) binding.loadingIndicator.visibility = View.VISIBLE
+            if (showSpinner) {
+                binding.loadingIndicator.visibility = View.VISIBLE
+                binding.statsPill.text = getString(R.string.loading_stations)
+                binding.statsPillCard.visibility = View.VISIBLE
+            }
             try {
                 StationRepository.refresh()
                 // Les favoris gardent un instantané à jour pour le mode hors ligne

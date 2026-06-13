@@ -11,7 +11,7 @@ import eightbitlab.com.blurview.RenderEffectBlur
  */
 object BlurUtils {
 
-    private const val DEFAULT_RADIUS = 18f
+    private const val DEFAULT_RADIUS = 14f
 
     fun apply(activity: Activity, vararg blurViews: BlurView) {
         val decorView = activity.window.decorView
